@@ -1,5 +1,6 @@
 package br.com.techlead.agendacontato.model;
 
+import br.com.techlead.agendacontato.utils.StatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,11 @@ public class PatientRecords {
     private String details;
 
     @NotNull
-    private String category;
+    private String department;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private StatusEnum status;
 
     @ManyToOne
     @JoinColumn(name = "nurseId", referencedColumnName = "id")
