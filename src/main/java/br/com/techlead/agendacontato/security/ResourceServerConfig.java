@@ -27,6 +27,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests();
         http.requestMatchers()
                 .antMatchers("/",
+                        "/restaurants/**",
                         "/registro/**",
                         "/register/**",
                         "/oauth/**",

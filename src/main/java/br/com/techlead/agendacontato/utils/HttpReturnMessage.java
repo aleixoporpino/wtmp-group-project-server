@@ -8,49 +8,49 @@ package br.com.techlead.agendacontato.utils;
 * @since   19/01/2018 
 */
 public class HttpReturnMessage {
-	private int codigoErro; // 0 - OK, 1 - Erro, 2 - Exception
-	private String mensagem;
-	private Object objeto;
+	private int errorCode; // 0 - OK, 1 - Erro, 2 - Exception
+	private String message;
+	private Object object;
 	
-	public HttpReturnMessage(int codigoErro, String mensagem, Object objeto) {
+	public HttpReturnMessage(int errorCode, String message, Object object) {
 		super();
-		this.codigoErro = codigoErro;
-		this.mensagem = mensagem;
-		this.objeto = objeto;
+		this.errorCode = errorCode;
+		this.message = message;
+		this.object = object;
 	}
 	
 	public HttpReturnMessage() {
 	}
 
-	public int getCodigoErro() {
-		return codigoErro;
+	public int getErrorCode() {
+		return errorCode;
 	}
-	public void setCodigoErro(int codigoErro) {
-		this.codigoErro = codigoErro;
+	public void setErrorCode(int errorCode) {
+		this.errorCode = errorCode;
 	}
-	public String getMensagem() {
-		return mensagem;
+	public String getMessage() {
+		return message;
 	}
-	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
+	public void setMessage(String message) {
+		this.message = message;
 	}
-	public Object getObjeto() {
-		return objeto;
+	public Object getObject() {
+		return object;
 	}
-	public void setObjeto(Object objeto) {
-		this.objeto = objeto;
+	public void setObject(Object object) {
+		this.object = object;
 	}
 	@Override
 	public String toString() {
-		return "HttpReturnMessage [codigoErro=" + codigoErro + ", mensagem=" + mensagem + ", objeto=" + objeto + "]";
+		return "HttpReturnMessage [errorCode=" + errorCode + ", message=" + message + ", object=" + object + "]";
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + codigoErro;
-		result = prime * result + ((mensagem == null) ? 0 : mensagem.hashCode());
-		result = prime * result + ((objeto == null) ? 0 : objeto.hashCode());
+		result = prime * result + errorCode;
+		result = prime * result + ((message == null) ? 0 : message.hashCode());
+		result = prime * result + ((object == null) ? 0 : object.hashCode());
 		return result;
 	}
 	@Override
@@ -62,17 +62,17 @@ public class HttpReturnMessage {
 		if (getClass() != obj.getClass())
 			return false;
 		HttpReturnMessage other = (HttpReturnMessage) obj;
-		if (codigoErro != other.codigoErro)
+		if (errorCode != other.errorCode)
 			return false;
-		if (mensagem == null) {
-			if (other.mensagem != null)
+		if (message == null) {
+			if (other.message != null)
 				return false;
-		} else if (!mensagem.equals(other.mensagem))
+		} else if (!message.equals(other.message))
 			return false;
-		if (objeto == null) {
-			if (other.objeto != null)
+		if (object == null) {
+			if (other.object != null)
 				return false;
-		} else if (!objeto.equals(other.objeto))
+		} else if (!object.equals(other.object))
 			return false;
 		return true;
 	}
