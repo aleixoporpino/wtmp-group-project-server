@@ -26,6 +26,11 @@ public class RestaurantService implements IRestaurantService {
         return repository.findByNameContainsIgnoreCaseOrTagsContainsIgnoreCaseOrderByName(nameOrTags, nameOrTags);
     }
 
+    @Transactional(readOnly = true)
+    public List<Restaurant> findByFavoriteNameOrTags(String nameOrTags) {
+        return repository.findByFavoriteIsTrueAndNameContainsIgnoreCaseOrTagsContainsIgnoreCaseOrderByName(nameOrTags, nameOrTags);
+    }
+
     @Transactional
     public Restaurant save(Restaurant restaurant) {
         repository.save(restaurant);
@@ -59,5 +64,10 @@ public class RestaurantService implements IRestaurantService {
     @Transactional(readOnly = true)
     public Restaurant findById(Integer id) {
         return repository.findOne(id);
+    }
+
+    @Override
+    public Collection<Restaurant> findAllFavorites() {
+        return repository.findAllByFavoriteTrue();
     }
 }

@@ -12,4 +12,8 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Integer>
     List<Restaurant> findRestaurantByOrderByName();
 
     List<Restaurant> findByNameContainsIgnoreCaseOrTagsContainsIgnoreCaseOrderByName(String name, String tags);
+
+    List<Restaurant> findByFavoriteIsTrueAndNameContainsIgnoreCaseOrTagsContainsIgnoreCaseOrderByName(String name, String tags);
+
+    List<Restaurant> findAllByFavoriteTrue();
 }

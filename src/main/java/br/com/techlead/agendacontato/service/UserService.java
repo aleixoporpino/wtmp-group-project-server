@@ -58,8 +58,7 @@ public class UserService implements IUserService {
     @Transactional
     public User save(User user) {
         user.setPassword(getPasswordEncoder().encode(user.getPassword()));
-        userRepository.save(user);
-        return user;
+        return userRepository.save(user);
     }
 
     @Transactional

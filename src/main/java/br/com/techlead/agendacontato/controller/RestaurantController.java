@@ -22,6 +22,11 @@ public class RestaurantController extends RestUtils<IRestaurantService> {
         return service.findAll();
     }
 
+    @GetMapping("/favorites")
+    Collection<Restaurant> findAllFavorites() {
+        return service.findAllFavorites();
+    }
+
 
     @PostMapping(path = "/", consumes = "application/json", produces = "application/json")
     public @ResponseBody
@@ -54,6 +59,11 @@ public class RestaurantController extends RestUtils<IRestaurantService> {
 
     @GetMapping("nameortags/{name}")
     public List<Restaurant> findByName(@PathVariable("name") String name) {
+        return this.service.findByNameOrTags(name);
+    }
+
+    @GetMapping("favorites/{name}")
+    public List<Restaurant> findFavoritesByNameOrTags(@PathVariable("name") String name) {
         return this.service.findByNameOrTags(name);
     }
 

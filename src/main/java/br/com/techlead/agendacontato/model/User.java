@@ -1,5 +1,6 @@
 package br.com.techlead.agendacontato.model;
 
+import br.com.techlead.agendacontato.utils.GenderEnum;
 import br.com.techlead.agendacontato.utils.UserTypeEnum;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -42,6 +43,11 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false)
     private UserTypeEnum type;
+
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender")
+    private GenderEnum gender;
 
     @Transient
     private List<PatientRecords> patientsRecords = new ArrayList<>();
