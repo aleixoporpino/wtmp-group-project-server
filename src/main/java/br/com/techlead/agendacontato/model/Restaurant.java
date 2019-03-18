@@ -45,6 +45,12 @@ public class Restaurant {
     @NotNull
     private Integer stars = 0;
 
+    @Column
+    private Double latitude;
+
+    @Column
+    private Double longitude;
+
     public Restaurant(Integer id) {
         this.id = id;
     }

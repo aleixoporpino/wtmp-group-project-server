@@ -230,6 +230,11 @@ create table Restaurant
   stars             int        default 0 not null
 );
 
+alter table restaurant
+  add latitude double null;
+
+alter table restaurant
+  add longitude double null;
 
 INSERT INTO agendacontato.Restaurant (id, name, description, brief_description, address, tags, phone, favorite, stars) VALUES (2, 'Red Lobster', 'ticaratica', 'Fresh Fish - Live Lobster', '10 Cardwell ave
 Unit 2', 'lobster, shrimp, seafood', '6475617767', 0, 3);
