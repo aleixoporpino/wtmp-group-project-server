@@ -23,7 +23,6 @@ public class Restaurant {
     @Column(name = "brief_description")
     private String briefDescription;
 
-    @NotNull
     @Column
     private String description;
 
@@ -50,6 +49,9 @@ public class Restaurant {
 
     @Column
     private Double longitude;
+
+    @Column
+    private String url;
 
     public Restaurant(Integer id) {
         this.id = id;
